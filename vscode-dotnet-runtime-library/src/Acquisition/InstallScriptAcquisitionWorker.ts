@@ -25,7 +25,11 @@ export class InstallScriptAcquisitionWorker implements IInstallScriptAcquisition
         const scriptFileEnding = os.platform() === 'win32' ? 'ps1' : 'sh';
         const scriptFileName = 'dotnet-install';
         this.scriptFilePath = path.join(__dirname, 'install scripts', `${scriptFileName}.${scriptFileEnding}`);
+<<<<<<< HEAD
         this.webWorker = new WebRequestWorker(extensionState, eventStream, this.scriptAcquisitionUrl + scriptFileEnding, scriptFileName + scriptFileEnding);
+=======
+        this.webWorker = new WebRequestWorker(extensionState, eventStream, this.scriptAcquisitionUrl + scriptFileEnding);
+>>>>>>> origin/cleanups
     }
 
     public async getDotnetInstallScriptPath(): Promise<string> {

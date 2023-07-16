@@ -25,6 +25,7 @@ export class VersionResolver implements IVersionResolver {
     private readonly releasesUrl = 'https://dotnetcli.blob.core.windows.net/dotnet/release-metadata/releases-index.json';
 
     constructor(extensionState: IExtensionState,
+<<<<<<< HEAD
                 private readonly eventStream: IEventStream,
                 webWorker?: WebRequestWorker
     )
@@ -84,6 +85,10 @@ export class VersionResolver implements IVersionResolver {
 
             resolve(availableVersions);
         });
+=======
+                private readonly eventStream: IEventStream) {
+        this.webWorker = new WebRequestWorker(extensionState, eventStream, this.releasesUrl);
+>>>>>>> origin/cleanups
     }
 
     public async getFullRuntimeVersion(version: string): Promise<string> {
